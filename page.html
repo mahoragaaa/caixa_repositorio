@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="atualizarTotal()">
     <nav id="topbar" class="andika-bold">
         <img src="banana.png" alt="Logo" class="banana">
         <h2>BANANAPLAY</h2>
@@ -22,18 +22,18 @@
             <hr> <br>
             <table id="lista_itens">
                 <tr>
-                    <th style="padding-left: 10px;">Jogo</th>
-                    <th style="padding-left: 70px;">Preço</th>
-                    <th style="padding-left: 100px;">Quantidade</th>
-                    <th style="padding-left: 100px;">Total</th>
+                    <th>Jogo</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                    <th>Total</th>
                 </tr>
             </table>
             <button class="comprar andika-bold">COMPRAR</button>
-            <h2 style="position: absolute;  bottom: 0px; right: 20px;">Valor: </h2>
+            <h2 style="position: absolute;  bottom: 0px; right: 20px;" id="valorTotal">Valor: </h2>
         </section>
 
         <section id="itens"> 
-            <figure>
+            <figure id="inscryption">
                 <figcaption>INSCRYPTION</figcaption>
                 <img src="https://m.media-amazon.com/images/M/MV5BYjBhNmNmNDktOWFjYi00YzIzLThmOTEtMTMxNjE0MmI4MGM1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Inscryption"> <br>
                 <input type="button" name=" Inscryption" value="9.99" onclick="adicionar(this)"></input>
@@ -54,7 +54,7 @@
             <figure id="darksouls">
                 <figcaption>DARK SOULS 3</figcaption>
                 <img src="https://th.bing.com/th/id/R.711304138753d172b58f79674cc8d63c?rik=ComX2zFFPIN3Tw&riu=http%3a%2f%2fcdn.playmaroc.com%2fwp-content%2fuploads%2f2016%2f11%2fdark-souls-3-cover.jpg&ehk=nlKNsql1GDjzF65adgn00c2ADThmrgF9rTLhLrehDGE%3d&risl=&pid=ImgRaw&r=0" alt="Dark Souls"><br>
-                <input type="button" name=" Dark sousl 3" value="21.99" onclick="adicionar(this)"></input>
+                <input type="button" name=" Dark souls 3" value="21.99" onclick="adicionar(this)"></input>
             </figure>
 
             <figure id="overcooked">

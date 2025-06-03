@@ -1,21 +1,38 @@
 const itens = document.getElementById("lista_itens")
 
-let q = {}
-q.quantidade = 0;
+function atualizarTotal() {
+    let qtJogos = document.querySelectorAll(".jogo")
+
+    for(let i = 0; i < qtJogos.length; i++) {
+        const ExibirTotal = document.getElementById("valorTotal")
+
+        qtJogos[i].lastChild.textContent = qtJogos[i].children[1].textContent * qtJogos[i].children[2].firstChild.value
+
+        let total  = 0
+        total = total + parseFloat(qtJogos[i].children[1].textContent)
+
+        console.log(qtJogos[i].lastChild.textContent) //Total
+        console.log(qtJogos[i].children[1].textContent) //Valor do jogo
+        console.log(qtJogos[i].children[2].firstChild.value)  //Quantidade especificada
+
+        ExibirTotal.textContent = "Valor: " + total
+    }
+
+    //setTimeout(atualizarTotal,1000)
+}
 
 function adicionar(item) {
-    const qt = q()
-
     if(itens.innerHTML.includes(item.name)) {
-        qt.quantidade++
-    } else { itens.innerHTML +=  "<tr>" +
+        console.log("jogo já incluido")
+        atualizarTotal()
+    } else { itens.innerHTML +=  "<tr class='jogo'>" +
                                 "<td>" + item.name + "</td>" +
                                 "<td>" + item.value + "</td>" +
-                                "<td>" + qt.quantidade + "</td>" +
-                                "<td>" + (item.value * qt.quantidade) + "</td>" +
+                                "<td><input type='text' value='1' id="+item.parentElement.id+"></input></td>" +
+                                "<td>"+ item.value +"</td>" +
                             "</tr>"
     }
 
-    console.log(itens)
+    //console.log(document.getElementById(item.parentElement.id).parentElement.parentElement.lastChild)
+    //console.log(itens)
 }
-
