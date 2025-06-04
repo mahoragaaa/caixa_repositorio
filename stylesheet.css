@@ -107,7 +107,7 @@ hr{
 input:hover {
   cursor: pointer;
 }
-input:active {
+input[type="button"]:active {
   transform: translateY(4px);
   box-shadow: none;
 }
